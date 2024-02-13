@@ -10,7 +10,7 @@ class SpecialServiceImage extends Model
     use HasFactory;
     protected $table = 'special_service_images';
     protected $primaryKey = 'id';
-    protected $guard = [];
+    protected $fillable = ['ss_id', 'image'];
 
     public function s_service(){
         return $this->belongsTo(SpecialService::class, 'ss_id');

@@ -10,7 +10,7 @@ class PortofolioImage extends Model
     use HasFactory;
     protected $table = 'portofolio_images';
     protected $primaryKey = 'id';
-    protected $guard = [];
+    protected $fillable = ['porto_id', 'image'];
 
     public function porto(){
         return $this->belongsTo(Portofolio::class, 'porto_id');

@@ -68,6 +68,18 @@
                     <span>Portofolio</span>
                 </a>
             </li>
+            <li class="sidebar-item {{ (request()->is('admin/special-service')) ? 'active' :  '' }}">
+                <a href="/admin/special-service" class='sidebar-link'>
+                <i class="bi bi-gear-wide-connected"></i>
+                    <span>Special Service</span>
+                </a>
+            </li>
+            <li class="sidebar-item {{ (request()->is('admin/service')) ? 'active' :  '' }}">
+                <a href="/admin/service" class='sidebar-link'>
+                <i class="bi bi-gear"></i>
+                    <span> Service</span>
+                </a>
+            </li>
             <li class="sidebar-item ">
                 <a href="/admin/logout" class='sidebar-link text-danger'>
                 <i class="bi bi-box-arrow-left text-danger"></i>

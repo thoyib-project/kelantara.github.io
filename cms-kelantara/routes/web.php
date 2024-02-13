@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PortofolioController;
+use App\Http\Controllers\SpecialServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +29,7 @@ Route::middleware(['admin', 'auth:web'])->prefix('/admin')->group(function (){
     Route::get('/dashboard', function () {return view('admin.dashboard');});
     Route::resource('blogs', BlogController::class);
     Route::resource('portofolio', PortofolioController::class);
+    Route::resource('special-service', SpecialServiceController::class);
+    Route::resource('service', ServiceController::class);
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });

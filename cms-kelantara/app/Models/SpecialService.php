@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class SpecialService extends Model
 {
@@ -14,7 +16,7 @@ class SpecialService extends Model
     protected $guard = [];
 
     public function img(){
-        return $this->hasMany(SpecialServiceImage::class, 'porto_id');
+        return $this->hasMany(SpecialServiceImage::class, 'ss_id');
     }
 
     public function getSlugOptions() : SlugOptions
