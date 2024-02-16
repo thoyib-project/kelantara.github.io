@@ -18,6 +18,9 @@ class Portofolio extends Model
     public function img(){
         return $this->hasMany(PortofolioImage::class, 'porto_id');
     }
+    public function type(){
+        return $this->belongsTo(PortoType::class, 'type_id');
+    }
 
     public function getSlugOptions() : SlugOptions
     {

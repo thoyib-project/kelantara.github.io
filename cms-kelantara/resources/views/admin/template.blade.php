@@ -62,6 +62,12 @@
                     <span>Blog</span>
                 </a>
             </li>
+            <li class="sidebar-item {{ (request()->is('admin/porto-type')) ? 'active' :  '' }}">
+                <a href="/admin/porto-type" class='sidebar-link'>
+                <i class="bi bi-tag"></i>
+                    <span>Portofolio Type</span>
+                </a>
+            </li>
             <li class="sidebar-item {{ (request()->is('admin/portofolio')) ? 'active' :  '' }}">
                 <a href="/admin/portofolio" class='sidebar-link'>
                 <i class="bi bi-file-earmark-image"></i>

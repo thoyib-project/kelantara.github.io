@@ -51,7 +51,7 @@ class SpecialServiceController extends Controller
             if($request->has('image'))
             {
                 foreach($request->file('image') as $image){
-                    $image2 = 'SS'.rand(1,9999).$image->getClientOriginalExtension();
+                    $image2 = 'SS'.rand(1,9999).'.'.$image->getClientOriginalExtension();
                     $image->move(public_path().'/img/', $image2);
                     SpecialServiceImage::create([
                         'ss_id' => $newSS->id,
@@ -110,7 +110,7 @@ class SpecialServiceController extends Controller
                     $item->delete();
                 }
                 foreach($request->file('image') as $image){
-                    $image2 = 'Porto'.rand(1,9999).$image->getClientOriginalExtension();
+                    $image2 = 'SS'.rand(1,9999).'.'.$image->getClientOriginalExtension();
                     $image->move(public_path().'/img/', $image2);
                     SpecialServiceImage::create([
                         'ss_id' => $editSS->id,

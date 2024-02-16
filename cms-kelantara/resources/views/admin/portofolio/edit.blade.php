@@ -13,6 +13,15 @@
                     {{ csrf_field() }}
                     @method('PUT')
                     <div class="form-group">
+                        <label for="exampleInputUsername1" class="fw-bold">Portofolio Type<span class="text-danger">*</span></label>
+                        <select class="form-control" name="type_id">
+                            <option selected disabled>Select Portofolio Type</option>
+                            @foreach ($type as $item)
+                            <option value="{{ $item->id }}" @if($porto->type_id == $item->id)@selected(true) @endif>{{ $item->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="exampleInputUsername1" class="fw-bold">Portofolio Title<span class="text-danger">*</span></label>
                         <input type="text" value="{{ $porto->title }}" class="form-control" id="exampleInputUsername1" placeholder="Input Portofolio Title..." name="title">
                         @error('title')

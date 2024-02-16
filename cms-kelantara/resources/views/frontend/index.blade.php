@@ -177,29 +177,19 @@
         </div>
 
         <div class="row">
+          @foreach($ss->take(3) as $item)
           <div class="col-xl-4 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><img src="{{asset('frontend/assets/img/service-sultra.jpg')}}" class="img-fluid" alt="" srcset=""></div>
-              <h4><a href="special-service-details.html">Amazing Sultra</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <div class="icon ">
+                @foreach($item->img->take(1) as $img)
+                <img src="{{asset('img/'.$img->image)}}" class="img-fluid" alt="" srcset="">
+                @endforeach
+              </div>
+              <h4><a href="{{url('/special-service/'.$item->slug)}}">{{$item->title}}</a></h4>
+              <p>{{$item->description}}</p>
             </div>
           </div>
-
-          <div class="col-xl-4 col-md-4 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><img src="{{asset('frontend/assets/img/service-sultra.jpg')}}" class="img-fluid" alt="" srcset=""></div>
-              <h4><a href="special-service-details.html">Bali Dewata</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><img src="{{asset('frontend/assets/img/service-bajo.jpg')}}" class="img-fluid" alt="" srcset=""></div>
-              <h4><a href="special-service-details.html">Sailing Bajo</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-            </div>
-          </div>
+          @endforeach
 
         </div>
 
@@ -232,35 +222,15 @@
           <h2>Services</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
-
         <div class="row">
+          @foreach($service as $serv)
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <h4><a href="">Good track record since 2015</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4><a href="#">{{$serv->title}}</a></h4>
+              <p>{!!$serv->description!!}</p>
             </div>
           </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
-              <h4><a href="">Flexible schedule</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
-            <div class="icon-box">
-              <h4><a href="">More 30 destination</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
-            <div class="icon-box">
-              <h4><a href="">Excelent customer service</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-            </div>
-          </div>
+          @endforeach
 
         </div>
 
@@ -278,102 +248,30 @@
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
           <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-card">Card</li>
-          <li data-filter=".filter-web">Web</li>
+          @foreach($portoType as $type)
+          <li data-filter=".filter-{{$type->id}}">{{$type->name}}</li>
+          @endforeach
         </ul>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="{{asset('frontend/assets/img/portfolio/portfolio-1.jpg')}}" class="img-fluid" alt=""></div>
+        @foreach($porto as $port)
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{$port->type_id}}">
+            <div class="portfolio-img">
+              @foreach($port->img->take(1) as $img)
+              <img src="{{asset('img/'.$img->image)}}" class="img-fluid" alt="">
+              @endforeach
+            </div>
             <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="{{asset('frontend/assets/img/portfolio/portfolio-1.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <h4>{{$port->title}}</h4>
+              <p>{{$port->type->name}}</p>
+              @foreach($port->img->take(1) as $img)
+              <a href="{{asset('img/'.$img->image)}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{$port->title}}"><i class="bx bx-plus"></i></a>
+              @endforeach
+              <a href="{{url('/porto/'.$port->slug)}}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="{{asset('frontend/assets/img/portfolio/portfolio-2.jpg')}}" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="{{asset('frontend/assets/img/portfolio/portfolio-2.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="{{asset('frontend/assets/img/portfolio/portfolio-3.jpg')}}" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <a href="{{asset('frontend/assets/img/portfolio/portfolio-3.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="{{asset('frontend/assets/img/portfolio/portfolio-4.jpg')}}" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="{{asset('frontend/assets/img/portfolio/portfolio-4.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="{{asset('frontend/assets/img/portfolio/portfolio-5.jpg')}}" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="{{asset('frontend/assets/img/portfolio/portfolio-5.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="{{asset('frontend/assets/img/portfolio/portfolio-6.jpg')}}" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <a href="{{asset('frontend/assets/img/portfolio/portfolio-6.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="{{asset('frontend/assets/img/portfolio/portfolio-7.jpg')}}" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <a href="{{asset('frontend/assets/img/portfolio/portfolio-7.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="{{asset('frontend/assets/img/portfolio/portfolio-8.jpg')}}" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <a href="{{asset('frontend/assets/img/portfolio/portfolio-8.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="{{asset('frontend/assets/img/portfolio/portfolio-9.jpg')}}" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="{{asset('frontend/assets/img/portfolio/portfolio-9.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
+        @endforeach
 
         </div>
 
@@ -391,59 +289,24 @@
         </div>
 
         <div class="row">
-
+          @foreach($blog->take(4) as $bl)
           <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><a href="detail-news.html" class="text-dark"><img src="{{asset('frontend/assets/img/team/team-1.jpg')}}" class="img-fluid" alt=""></a></div>
+            <div class="member d-flex align-items-center">
+              <div class="pic"><a href="{{url('/'.$bl->slug)}}" class="text-dark"><img src="{{asset('img/'.$bl->image)}}" style="height: 18vh;" class="img-fluid" alt=""></a></div>
               <div class="member-info">
-                  <a href="detail-news.html" class="text-dark">
-                    <h4>Walter White</h4>
+                  <a href="{{url('/blog/'.$bl->slug)}}" class="text-dark">
+                    <h4>{{$bl->title}}</h4>
                     <!-- <span>Chief Executive Officer</span> -->
-                    <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                    <p>{!!$bl->description!!}</p>
                   </a>
                 </div>
             </div>
           </div>
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><a href="detail-news.html" class="text-dark"><img src="{{asset('frontend/assets/img/team/team-2.jpg')}}" class="img-fluid" alt=""></a></div>
-              <div class="member-info">
-                  <a href="detail-news.html" class="text-dark">
-                    <h4>Walter White</h4>
-                    <!-- <span>Chief Executive Officer</span> -->
-                    <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                  </a>
-                </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><a href="detail-news.html" class="text-dark"><img src="{{asset('frontend/assets/img/team/team-3.jpg')}}" class="img-fluid" alt=""></a></div>
-              <div class="member-info">
-                  <a href="detail-news.html" class="text-dark">
-                    <h4>Walter White</h4>
-                    <!-- <span>Chief Executive Officer</span> -->
-                    <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                  </a>
-                </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><a href="detail-news.html" class="text-dark"><img src="{{asset('frontend/assets/img/team/team-4.jpg')}}" class="img-fluid" alt=""></a></div>
-              <div class="member-info">
-                  <a href="detail-news.html" class="text-dark">
-                    <h4>Walter White</h4>
-                    <!-- <span>Chief Executive Officer</span> -->
-                    <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                  </a>
-                </div>
-            </div>
-          </div>
+          @endforeach
 
         </div>
         <div class="mt-5 text-center">
-          <a class="align-middle btn btn-info text-white" href="list-news.html">See More</a>
+          <a class="align-middle btn btn-info text-white" href="/list-blog">See More</a>
         </div>
       </div>
     </section>

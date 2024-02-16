@@ -20,6 +20,7 @@
                     <tr>
                         <th style="text-align: center;">No</th>
                         <th style="text-align: center;">Action</th>
+                        <th style="text-align: center;">Portofolio Type</th>
                         <th style="text-align: center;">Portofolio Title</th>
                         <th style="text-align: center;">Description</th>
                         <th style="text-align: center;">Portofolio Image</th>
@@ -39,6 +40,7 @@
                                 </form>
                                 </div>
                             </td>
+                            <td>{{$item->type->name}}</td>
                             <td>{{$item->title}}</td>
                             <td>{!! $item->description !!}</td>
                             <td>

@@ -1825,3 +1825,13 @@ section {
     padding-top: 4px;
   }
 }
+
+#social-links ul{
+  display: flex;
+  gap: 2rem;
+  text-decoration: none;
+  list-style: none;
+  font-size: 2rem;
+  justify-content: center;
+  padding: 0;
+}

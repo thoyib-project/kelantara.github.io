@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PortoType;
 use App\Models\Portofolio;
 use Illuminate\Http\Request;
 use App\Models\PortofolioImage;
@@ -25,7 +26,8 @@ class PortofolioController extends Controller
      */
     public function create()
     {
-        return view('admin.portofolio.create');
+        $type = PortoType::all();
+        return view('admin.portofolio.create', compact('type'));
     }
 
     /**
@@ -36,9 +38,11 @@ class PortofolioController extends Controller
         $this->validate($request,[
             'title' => 'required',
             'description' => 'required',
+            'type_id' => 'required',
         ],[
             'title' => 'Insert Blog Title',
             'description' => 'Insert Description',
+            'type_id' => 'Select Type',
         ]);
 
         try {
@@ -46,12 +50,13 @@ class PortofolioController extends Controller
             $newPorto = new Portofolio();
             $newPorto->title = $request->title;
             $newPorto->description = $request->description;
+            $newPorto->type_id = $request->type_id;
 
             $newPorto->save();
             if($request->has('image'))
             {
                 foreach($request->file('image') as $image){
-                    $image2 = 'Porto'.rand(1,9999).$image->getClientOriginalExtension();
+                    $image2 = 'Porto'.rand(1,9999).'.'.$image->getClientOriginalExtension();
                     $image->move(public_path().'/img/', $image2);
                     PortofolioImage::create([
                         'porto_id' => $newPorto->id,
@@ -82,8 +87,9 @@ class PortofolioController extends Controller
      */
     public function edit($id)
     {
+        $type = PortoType::all();
         $porto = Portofolio::find($id);
-        return view('admin.portofolio.edit', compact('porto'));
+        return view('admin.portofolio.edit', compact('porto', 'type'));
     }
 
     /**
@@ -96,6 +102,7 @@ class PortofolioController extends Controller
             $editPorto = Portofolio::find($id);
             $editPorto->title = $request->title;
             $editPorto->description = $request->description;
+            $editPorto->type_id = $request->type_id;
 
             $editPorto->save();
             if($request->has('image'))
@@ -110,7 +117,7 @@ class PortofolioController extends Controller
                     $item->delete();
                 }
                 foreach($request->file('image') as $image){
-                    $image2 = 'Porto'.rand(1,9999).$image->getClientOriginalExtension();
+                    $image2 = 'Porto'.rand(1,9999).'.'.$image->getClientOriginalExtension();
                     $image->move(public_path().'/img/', $image2);
                     PortofolioImage::create([
                         'porto_id' => $editPorto->id,

@@ -12,6 +12,18 @@
                 <form action="{{ url('admin/portofolio') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
+                        <label for="exampleInputUsername1" class="fw-bold">Portofolio Type<span class="text-danger">*</span></label>
+                        <select class="form-control" name="type_id">
+                            <option selected disabled>Select Portofolio Type</option>
+                            @foreach ($type as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('type_id')
+                                <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="exampleInputUsername1" class="fw-bold">Portofolio Title<span class="text-danger">*</span></label>
                         <input type="text" value="{{ old('title') }}" class="form-control" id="exampleInputUsername1" placeholder="Input Portofolio Title..." name="title">
                         @error('title')
