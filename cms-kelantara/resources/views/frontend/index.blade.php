@@ -186,7 +186,7 @@
                 @endforeach
               </div>
               <h4><a href="{{url('/special-service/'.$item->slug)}}">{{$item->title}}</a></h4>
-              <p>{{$item->description}}</p>
+              <p>{!!$item->description!!}</p>
             </div>
           </div>
           @endforeach
