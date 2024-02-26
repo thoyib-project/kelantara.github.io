@@ -86,6 +86,18 @@
                     <span> Service</span>
                 </a>
             </li>
+            <li class="sidebar-item {{ (request()->is('admin/clients')) ? 'active' :  '' }}">
+                <a href="/admin/clients" class='sidebar-link'>
+                <i class="bi bi-person-fill"></i>
+                    <span> Clients</span>
+                </a>
+            </li>
+            <li class="sidebar-item {{ (request()->is('admin/testimoni')) ? 'active' :  '' }}">
+                <a href="/admin/testimoni" class='sidebar-link'>
+                <i class="bi bi-person-heart"></i>  
+                    <span> Testimoni</span>
+                </a>
+            </li>
             <li class="sidebar-item ">
                 <a href="/admin/logout" class='sidebar-link text-danger'>
                 <i class="bi bi-box-arrow-left text-danger"></i>

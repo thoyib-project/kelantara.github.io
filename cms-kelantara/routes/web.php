@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\PortoTypeController;
+use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\SpecialServiceController;
 
@@ -41,5 +43,7 @@ Route::middleware(['admin', 'auth:web'])->prefix('/admin')->group(function (){
     Route::resource('special-service', SpecialServiceController::class);
     Route::resource('service', ServiceController::class);
     Route::resource('porto-type', PortoTypeController::class);
+    Route::resource('clients', ClientController::class);
+    Route::resource('testimoni', TestimoniController::class);
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });

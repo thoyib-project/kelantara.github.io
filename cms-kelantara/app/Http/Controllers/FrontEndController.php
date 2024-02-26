@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Share;
 use App\Models\Blog;
+use App\Models\Client;
 use App\Models\Service;
 use App\Models\PortoType;
+use App\Models\Testimoni;
 use App\Models\Portofolio;
 use Illuminate\Http\Request;
 use App\Models\SpecialService;
@@ -17,13 +19,15 @@ class FrontEndController extends Controller
         $ss = SpecialService::latest()->get();
         $blog = Blog::latest()->get();
         $porto = Portofolio::latest()->get();
+        $testi = Testimoni::latest()->get();
+        $client = Client::latest()->get();
         $portoType = PortoType::latest()->get();
         $shareComponent = Share::currentPage()
         ->facebook()
         ->twitter()
         ->telegram()    
         ->whatsapp();   
-        return view('frontend.index', compact('shareComponent','service', 'ss', 'blog', 'porto', 'portoType'));
+        return view('frontend.index', compact('shareComponent','service', 'ss', 'blog', 'porto', 'portoType', 'testi', 'client'));
     }
 
     public function blog(){
