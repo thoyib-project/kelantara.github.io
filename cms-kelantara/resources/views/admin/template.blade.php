@@ -83,7 +83,7 @@
             <li class="sidebar-item {{ (request()->is('admin/service')) ? 'active' :  '' }}">
                 <a href="/admin/service" class='sidebar-link'>
                 <i class="bi bi-gear"></i>
-                    <span> Service</span>
+                    <span> Why Choose Us</span>
                 </a>
             </li>
             <li class="sidebar-item {{ (request()->is('admin/clients')) ? 'active' :  '' }}">

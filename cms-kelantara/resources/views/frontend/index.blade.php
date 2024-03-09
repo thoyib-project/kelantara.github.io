@@ -217,12 +217,11 @@
         <div class="section-title">
           <h2>Why Choose Us</h2>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
           @foreach($service as $serv)
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <h4><a href="#">{{$serv->title}}</a></h4>
-              <p>{!!$serv->description!!}</p>
             </div>
           </div>
           @endforeach
