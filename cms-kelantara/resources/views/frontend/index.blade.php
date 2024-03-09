@@ -126,14 +126,7 @@
 
         <div class="row content">
           <div class="col-lg-6">
-            <p>
-              Why choose us?.
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            </ul>
+            <img src="{{asset('frontend/assets/img/logo.png')}}" style="width: 80%" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
@@ -150,7 +143,7 @@
 
     <!-- ======= Special Services Section ======= -->
     <section id="special-services" class="services section-bg">
-      <div class="container mb-5" data-aos="fade-up">
+      <div class="container mb-1" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Special Services</h2>
@@ -179,17 +172,39 @@
     <!-- End Services Section -->
 
     <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container" data-aos="zoom-in">
+    <section id="services" class="services">
+      <div class="container mt-1" data-aos="fade-up">
 
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-start">
-            <h3>Call To Action</h3>
-            <p>Free consultation for further discussion.</p>
+        <div class="section-title">
+          <h2>Our Service</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <h4><a href="#">Event Organizer</a></h4>
+            </div>
           </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="https://api.whatsapp.com/send?phone=6282111111466&text=Hai%20saya%20ingin%20berkonsultasi%20mengenai%20rencana%20liburan%20saya" target="_blank">Call To Action</a>
+          <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <h4><a href="#">Tour Planner</a></h4>
+            </div>
           </div>
+          <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <h4><a href="#">Employee Gathering</a></h4>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <h4><a href="#">Business Trip</a></h4>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <h4><a href="#">Private Tip</a></h4>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -200,8 +215,7 @@
       <div class="container mt-5" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Why Choose Us</h2>
         </div>
         <div class="row">
           @foreach($service as $serv)
@@ -224,7 +238,6 @@
 
         <div class="section-title">
           <h2>Instagram Post</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -266,7 +279,6 @@
 
         <div class="section-title">
           <h2>Blog</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div class="row">
@@ -325,8 +337,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Testimoni</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Happy Customer</h2>
         </div>
 
         <div class="row">
@@ -378,6 +389,30 @@
                 </div>
             </div>
           </div>
+          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><a href="#" class="text-dark"><img src="{{asset('/frontend/assets/img/team/team-4.jpg')}}" class="img-fluid" alt=""></a></div>
+              <div class="member-info">
+                  <a href="#" class="text-dark">
+                    <h4>Walter White</h4>
+                    <!-- <span>Chief Executive Officer</span> -->
+                    <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                  </a>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><a href="#" class="text-dark"><img src="{{asset('/frontend/assets/img/team/team-4.jpg')}}" class="img-fluid" alt=""></a></div>
+              <div class="member-info">
+                  <a href="#" class="text-dark">
+                    <h4>Walter White</h4>
+                    <!-- <span>Chief Executive Officer</span> -->
+                    <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                  </a>
+                </div>
+            </div>
+          </div>
 
         </div>
 
@@ -392,11 +427,11 @@
 
         <div class="row">
           <div class="col-lg-9 text-center text-lg-start">
-            <h3>Still don't believe the testimony?</h3>
+          <h3>Call To Action</h3>
             <p>Free consultation for further discussion.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="https://api.whatsapp.com/send?phone=6282111111466&text=Hai%20saya%20ingin%20berkonsultasi%20mengenai%20rencana%20liburan%20saya" target="_blank">Free Consultation</a>
+            <a class="cta-btn align-middle" href="https://api.whatsapp.com/send?phone=6282111111466&text=Hai%20saya%20ingin%20berkonsultasi%20mengenai%20rencana%20liburan%20saya" target="_blank">Call To Action</a>
           </div>
         </div>
 
@@ -472,8 +507,6 @@
 
         <div class="section-title">
           <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
 
         <div class="row">
 
@@ -538,11 +571,11 @@
           <div class="col-lg-4 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Event Organizer</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Tour Planner</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Employee Gathering</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Business Trip</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Private Trip</a></li>
             </ul>
           </div>
 
@@ -564,7 +597,7 @@
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Copyright Kelana Nusantara <strong><span>PT Kelana Artaka Travelindo</span></strong>
+        &copy; Copyright Kelantara <strong><span>PT Kelana Artaka Travelindo</span></strong>
       </div>
       <div class="credits">
       </div>
