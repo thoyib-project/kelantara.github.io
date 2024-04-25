@@ -92,7 +92,7 @@
       <div class="row">
         <div class="col-lg-12 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 text-center" data-aos="fade-up" data-aos-delay="200">
           <img src="{{asset('frontend/assets/img/logo.png')}}" alt="" class="img-fluid align-self-center" style="max-width: 40%;">
-          <h2>Tour & Travel Organize</h2>
+          <h2>LIVE UP YOUR PLAN</h2>
         </div>
       </div>
     </div>
@@ -130,9 +130,10 @@
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+            Bergerak sejak akhir tahun 2014 dengan nama Explorer Indonesia dan pada
+            tahun 2018 berganti nama menjadi Kelantara dengan filosofi yang sama. Fokus
+            bergerak di bidang Tour dan Event Organizer dan juga turunan sejenisnya untuk
+            kebutuhan jasa yang berhubungan dengan kegiatan pariwisata dan event
             </p>
             <a href="#" class="btn-learn-more">Learn More</a>
           </div>
@@ -147,7 +148,11 @@
 
         <div class="section-title">
           <h2>Special Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Selain memiliki kantor pusat yang bertempat di Bali, dimana sudah terkenal
+              sebagai pusat pariwisata nya Indonesia, Kelantara juga sudah memiliki relasi
+              hubungan dan kerjasama bisnis untuk kegiatan pariwisata dan event di
+              Sulawesi Tenggara dan Labuan Bajo
+          </p>
         </div>
 
         <div class="row">
@@ -181,26 +186,37 @@
         <div class="row justify-content-center">
           <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <h4><a href="#">Event Organizer</a></h4>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
+              <h1><a href="#"><i class="bi bi-calendar-range"></i></a></h1>
               <h4><a href="#">Tour Planner</a></h4>
             </div>
           </div>
           <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
+              <h1><a href="#"><i class="bi bi-clipboard-check"></i></a></h1>
+              <h4><a href="#">Event Organizer</a></h4>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <h1><a href="#"><i class="bi bi-person-gear"></i></a></h1>
               <h4><a href="#">Employee Gathering</a></h4>
             </div>
           </div>
           <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <h4><a href="#">Business Trip</a></h4>
+              <h1><a href="#"><i class="bi bi-people-fill"></i></a></h1>
+              <h4><a href="#">Family Trip</a></h4>
             </div>
           </div>
           <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
+              <h1><a href="#"><i class="bi bi-bus-front"></i></a></h1>
+              <h4><a href="#">Study Tour</a></h4>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <h1><a href="#"><i class="bi bi-person-lock"></i></a></h1>
               <h4><a href="#">Private Tip</a></h4>
             </div>
           </div>
@@ -582,11 +598,9 @@
             <h4>Our Social Networks</h4>
             <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="twitter"><i class="bx bxl-tiktok"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
               <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
 
